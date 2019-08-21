@@ -20,7 +20,24 @@ if (form)
 
         const card = new vCard();
         // @ts-ignore
-        for (let { name, value } of form.elements) card.set(name, value);
+        for (let { name, value } of form.elements) {
+            value = value.trim();
+
+            switch (name) {
+                case 'fn':
+                    card.set('n', value.replace(/\s+/g, ';'));
+                    break;
+                case 'photo':
+                    if (value) {
+                        const type = value.split('.').slice(-1)[0];
+
+                        value = `TYPE=${
+                            type === 'jpg' ? 'JPEG' : type.toUpperCase()
+                        };VALUE=URI:${value}`;
+                    }
+            }
+            card.set(name, value);
+        }
 
         toCanvas(canvas, card.toString('3.0'));
     };

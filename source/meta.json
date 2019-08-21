@@ -5,9 +5,25 @@
         "required": true
     },
     {
-        "name": "n",
-        "label": "Name",
+        "name": "email",
+        "type": "email",
+        "label": "E-mail",
         "required": true
+    },
+    {
+        "name": "tel",
+        "type": "tel",
+        "label": "Telephone"
+    },
+    {
+        "name": "url",
+        "type": "url",
+        "label": "Web-site"
+    },
+    {
+        "name": "photo",
+        "type": "url",
+        "label": "Photo"
     },
     {
         "name": "org",

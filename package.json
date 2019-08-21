@@ -11,12 +11,13 @@
     ],
     "scripts": {
         "start": "parcel source/index.html",
-        "build": "parcel build source/index.html",
+        "build": "parcel build source/index.html --public-url ./",
         "test": "lint-staged"
     },
     "husky": {
         "hooks": {
-            "pre-commit": "lint-staged"
+            "pre-commit": "lint-staged",
+            "pre-push": "npm run build"
         }
     },
     "lint-staged": {
