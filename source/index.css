@@ -1,0 +1,6 @@
+body > main.mdl-card {
+    display: flex;
+    flex-direction: row;
+    width: auto;
+    padding-left: 1rem;
+}

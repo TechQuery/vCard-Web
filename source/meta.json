@@ -1,0 +1,16 @@
+[
+    {
+        "name": "fn",
+        "label": "Full name",
+        "required": true
+    },
+    {
+        "name": "n",
+        "label": "Name",
+        "required": true
+    },
+    {
+        "name": "org",
+        "label": "Organization"
+    }
+]
