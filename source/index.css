@@ -1,6 +1,10 @@
 body > main.mdl-card {
     display: flex;
     flex-direction: row;
+    align-items: center;
     width: auto;
     padding-left: 1rem;
+}
+.mdl-textfield {
+    padding: 0.5rem 0;
 }
