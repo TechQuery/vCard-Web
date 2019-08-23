@@ -1,10 +1,26 @@
-body > main.mdl-card {
+.flex-box {
     display: flex;
     flex-direction: row;
     align-items: center;
+}
+@media (orientation: portrait) {
+    .flex-box {
+        flex-wrap: wrap;
+    }
+}
+
+body > main.mdl-card {
     width: auto;
-    padding-left: 1rem;
+    padding: 0 1rem;
 }
 .mdl-textfield {
+    width: 100%;
     padding: 0.5rem 0;
+}
+.mdl-textfield__input {
+    outline: none;
+    transition: 0.5s;
+}
+.mdl-textfield__input:focus {
+    border-bottom-color: rgba(0, 0, 0, 0.5);
 }
