@@ -1,17 +1,16 @@
 {
     "compilerOptions": {
-        "outDir": "./dist/",
-        "sourceMap": true,
         "strict": true,
         "noImplicitReturns": true,
         "noImplicitAny": true,
         "downlevelIteration": true,
-        "module": "es6",
+        "module": "ES6",
         "moduleResolution": "node",
         "resolveJsonModule": true,
         "allowSyntheticDefaultImports": true,
-        "target": "es5",
-        "allowJs": true
+        "target": "ES6",
+        "jsx": "react-jsx",
+        "jsxImportSource": "dom-renderer"
     },
     "include": ["./source/**/*"]
 }

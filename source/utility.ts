@@ -1,10 +1,19 @@
-// @ts-ignore
 import vCard from 'vcf';
 
-export function makeVCard(fields: Iterable<{ name: string; value: string }>) {
+export interface VCardData {
+    fn: string;
+    email: string;
+    tel?: string;
+    url?: string;
+    photo?: string;
+    title: string;
+    org?: string;
+}
+
+export function makeVCard(data: VCardData) {
     const card = new vCard();
 
-    for (let { name, value } of fields) {
+    for (let [name, value] of Object.entries(data) as [string, string][]) {
         value = value.trim();
 
         switch (name) {
@@ -14,10 +23,10 @@ export function makeVCard(fields: Iterable<{ name: string; value: string }>) {
             case 'photo':
             case 'logo':
                 if (value) {
-                    const type = value.split('.').slice(-1)[0];
+                    const type = value.split('.').at(-1);
 
                     value = `TYPE=${
-                        type === 'jpg' ? 'JPEG' : type.toUpperCase()
+                        type === 'jpg' ? 'JPEG' : type?.toUpperCase()
                     };VALUE=URI:${value}`;
                 }
         }
